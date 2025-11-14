@@ -1,10 +1,17 @@
 
+
+# Definimos la lista de inventario con estadísticas
+
 listainventario = []
 
+
+# Función para agregar un producto al inventario
 
 def agregar_producto ():
     print("AGREGAR PRODUCTO")
     nombre = (input("producto a añadir: "))
+
+# Validar precio y cantidad
 
     while True:
         try:
@@ -16,6 +23,8 @@ def agregar_producto ():
         except ValueError:
             print("Error: Debe ingresar un número válido para el precio: ")
 
+# Validar cantidad
+
     while True: 
         try: 
             cantidad = int(input("Ingresa cantidad del producto: "))
@@ -26,6 +35,8 @@ def agregar_producto ():
         except ValueError:
             print ("Error cantidad invalida, intente nuevamente: ")
 
+# Crear diccionario del producto y agregar a la lista
+
     producto = {
         'nombre' : nombre,
         "precio" : precio,
@@ -34,6 +45,7 @@ def agregar_producto ():
     listainventario.append(producto)
     print(f"producto {nombre} agregado")
 
+# Función para mostrar el inventario
 
 def mostrar_inventario():
     print("  MOSTRANDO INVENTARIO  ")
@@ -42,6 +54,8 @@ def mostrar_inventario():
     else: 
         print(f"Total productos {listainventario}")
         print()
+
+# Función para calcular estadísticas del inventario
 
 def calcular_estadisticas():
     print("  ESTADISTICAS DEL INVENTARIO  ")
@@ -53,6 +67,8 @@ def calcular_estadisticas():
         print(f"Valor total del inventario {total_inventario}")
         print(f"Productos totales en inventario {total_productos}")
 
+# Función para mostrar el menú y manejar las opciones
+
 def mostrar_menu ():
     print("  MENU OPCIONES  ")
     print("1. Agregar producto")
@@ -60,7 +76,11 @@ def mostrar_menu ():
     print("3. Calcular estadísticas")
     print("4. Salir")
 
+# Función principal para llamar al menú y manejar la lógica
+
 def llamar ():
+
+# Bucle principal del programa
     while True:
         mostrar_menu()
         opcion = input("Seleccione una opcion (1-4): ")
@@ -81,12 +101,15 @@ def llamar ():
         else:
             print("Ingrese una opcion valida")
 
+
+# Punto de entrada del programa
 if __name__ == "__main__":
     llamar()
 
-
-
-
+# El objetivo de esta semana es gestionar un inventario de productos, 
+# permitiendo al usuario agregar productos, 
+# mostrar el inventario y calcular estadísticas como el valor total del inventario y la cantidad total de productos.
+# En este programa utilizamos listas y diccionarios para almacenar y manejar los datos de los productos
 
 
 
